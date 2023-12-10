@@ -17,7 +17,7 @@ void imprimir_matriz(unsigned char*, unsigned int, unsigned int);
 //Recebe uma matriz para retorno, uma matriz de unsigned char, o tamanho da janela, a quantidade de linhas e de colunas
 //Filtra os valores da matriz utilizando a média aritmética dos valores na janela
 //Organiza os valores obtidos numa matriz de retorno
-void filtrar_media(unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int);
+unsigned char  *filtrar_media(unsigned char*, unsigned char*, unsigned int, unsigned int, unsigned int);
 
 //Recebe uma matriz de unsigned char, a quantidade de linhas e de colunas
 //Imprime uma matriz destacando os seus valores não nulos com cores diferentes

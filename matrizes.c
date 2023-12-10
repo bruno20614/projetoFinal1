@@ -85,7 +85,7 @@ unsigned char *quantizar(unsigned char *m, unsigned int lin, unsigned int col, u
     return q;
 }
 
-void filtrar_media(unsigned char *m_retorno, unsigned char *m, unsigned int tam_janela, unsigned int lin, unsigned int col)
+unsigned char *filtrar_media(unsigned char *m_retorno, unsigned char *m, unsigned int tam_janela, unsigned int lin, unsigned int col)
 {
     if (!(tam_janela % 2)) {
         puts("ERRO! O Tamanho da Janela precisa ser Ímpar");
@@ -122,4 +122,5 @@ void filtrar_media(unsigned char *m_retorno, unsigned char *m, unsigned int tam_
             *((m_retorno + j) + (i*col)) = (unsigned short int) s/(tam_janela*tam_janela); //Mudar o valor em questão para o valor da média
         }
     }
+    return m_retorno;
 }

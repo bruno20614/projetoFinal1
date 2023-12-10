@@ -6,7 +6,8 @@
 #include <dirent.h>
 
 #define JANELA 3
-
+#define QUANTIZAR 8
+//adiconar argc e argv
 int main(){
 
     int k;
@@ -28,11 +29,16 @@ int main(){
             if(vez==0||vez==1) continue;
             readPGMImage(&img,dir->d_name);
 
-            //
-            char nomeArquivo[256];
-filtrar_media( snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name),  dir->d_name,JANELA,  img.r,  img.c);
+            //writePGMimage( &img,output);
             
-            snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name);
+            //char nomeArquivo[256];
+
+filtrar_media snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name),  dir->d_name,JANELA,  img.r,  img.c;
+            
+            //snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name);
+
+            writePGMimage( &img,quantizar(dir->d_name,img.r,img.c,QUANTIZAR));
+            writePGMimage( &img,quantizar(dir->d_name,img.r,img.c,QUANTIZAR));
 
             vez++;
         }
