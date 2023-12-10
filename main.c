@@ -27,14 +27,16 @@ int main(){
        while ((dir=readdir(d)) !=NULL) {  
             printf("\n-> %s \n ", dir->d_name);
             if(vez==0||vez==1) continue;
+
             readPGMImage(&img,dir->d_name);
 
-            //writePGMimage( &img,output);
-            
+            FILE *blurred;
+            blurred fopen("mean.pgm","a");
+
+             filtrar_media(mean.pgm,readPGMImage(&img,dir->d_name),JANELA,img.r,img.c);           
             //char nomeArquivo[256];
 
-filtrar_media snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name),  dir->d_name,JANELA,  img.r,  img.c;
-            
+            //filtrar_media(BLUREED.pgm)            
             //snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name);
 
             writePGMimage( &img,quantizar(dir->d_name,img.r,img.c,QUANTIZAR));
