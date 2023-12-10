@@ -14,17 +14,16 @@ void viewPGMImage(struct pgm *pio) {
 void readPGMImage(struct pgm *pio, char *filename) {
     FILE *fp;
     char ch;
-
+    puts("02");
     if (!(fp = fopen(filename, "r"))) {
         perror("Erro.");
         exit(1);
     }
-
+    puts("03");
     if ((ch = getc(fp)) != 'P') {
         puts("A imagem fornecida não está no formato pgm");
         exit(2);
     }
-
     pio->tipo = getc(fp) - 48;
 
     fseek(fp, 1, SEEK_CUR);
