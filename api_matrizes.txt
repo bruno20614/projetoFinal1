@@ -1,0 +1,40 @@
+Conteúdo:
+1-Função para gerar uma matriz pseudo-aleatória
+2-Função para imprimir uma matriz (normal)
+3-Função para imprimir uma matriz destacando seus valores diferentes de 0 (SOMENTE UNIX)
+4-Função para gerar uma matriz SCM
+5-Função para quantizar uma matriz
+6-Função para filtrar uma matriz usando o filtro da média
+
+Blibliotecas padrão utilizadas:
+<stdio.h>
+<stdlib.h>
+<time.h>
+
+
+Incluir a biblioteca "op_matrizes.h" para utilizar o conteúdo disponível
+Separe os processos de compilação e linkedição para poder utilizar
+Recomendado o uso de makefile (opcional)
+
+Funções:
+
+void preencher_matriz(unsigned char* matriz, unsigned int lin, unsigned int col, int val_max, int val_min);
+
+void imprimir_matriz(unsigned char* matriz, unsigned int lin, unsigned int col);
+
+void filtrar_media(unsigned char* matriz_retorno, unsigned char* matriz, unsigned int tam_janela, unsigned int lin, unsigned int col);
+
+void destacar_valores_nao_nulos(unsigned char* matriz, unsigned int lin, unsigned int col);
+
+unsigned char *gerar_matriz_scm(unsigned char* matriz 1, unsigned char* matriz 2, unsigned int lin, unsigned int col, unsigned char maior_valor);
+
+unsigned char *quantizar(unsigned char* matriz, unsigned int lin, unsigned int col, unsigned int nível de quantização);
+OBS: Para alterar o valor máximo de entrada para a quantização, altere a macro "NUM_MAXIMO" em "op_matrizes.h"
+
+Legendas:
+lin = quantidade de linhas
+col = quantidade de colunas
+val_max = valor máximo possível
+val_min = valor mínimo possível
+tam_janela = tamanho da janela (onde será feita a média)
+maior_valor = maior valor existente nas matrizes de entrada
