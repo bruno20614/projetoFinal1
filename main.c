@@ -1,70 +1,72 @@
 #include "op_matrizes.h"
 #include "pgmlib.h"
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <dirent.h>
 
-#define FOLDER "./oncotex_pgm"
-#define LIN 16
-#define COL 16
-#define val_max 255
-#define val_min 0
-#define JANELA 9
-#define maior_valor 255
-#define QTDIMG 2
+#define JANELA 3
+
+int main(){
+
+    int k;
+	clock_t begin, end;
+	double time_per_img, time_total = 0;
+	long long int a = 999999999;
+	begin = clock();
+
+    DIR *d;
+    struct dirent *dir;
+    d = opendir("images");
+
+    struct pgm img;
+     int vez=0;
+    if(d) {
+
+       while ((dir=readdir(d)) !=NULL) {  
+            printf("\n-> %s \n ", dir->d_name);
+            if(vez==0||vez==1) continue;
+            readPGMImage(&img,dir->d_name);
+
+            //
+            char nomeArquivo[256];
+filtrar_media( snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name),  dir->d_name,JANELA,  img.r,  img.c);
+            
+            snprintf(nomeArquivo,sizeof(nomeArquivo),"BLURRED_%s.pgm",dir->d_name);
+
+            vez++;
+        }
+        closedir(d);
+    } 
 
 
-int main() {
-    struct pgm imagem;
-    char *nomeArquivo = NULL;
+       
 
-    nomeArquivo = malloc(100);
 
-    if (nomeArquivo == NULL) {
-        perror("Erro ao alocar memória para nomeArquivo");
-        exit(EXIT_FAILURE);
-    }
 
-    snprintf(nomeArquivo, 100, "%s/nome_do_arquivo.pgm", FOLDER);
 
-    readPGMImage(&imagem, nomeArquivo);
-    
-    printf("Imagem PGM Original:\n");
-    viewPGMImage(&imagem);
 
-    unsigned int linhas = 5;
-    unsigned int colunas = 5;
-    unsigned char *matriz1 = (unsigned char *)malloc(linhas * colunas * sizeof(unsigned char));
-    unsigned char *matriz2 = (unsigned char *)malloc(linhas * colunas * sizeof(unsigned char));
 
-    preencher_matriz(matriz1, linhas, colunas, 255, 0);
-    preencher_matriz(matriz2, linhas, colunas, 255, 0);
 
-    printf("\nMatriz Original 1:\n");
-    imprimir_matriz(matriz1, linhas, colunas);
 
-    printf("\nMatriz Original 2:\n");
-    imprimir_matriz(matriz2, linhas, colunas);
 
-    unsigned char *scm = gerar_matriz_scm(matriz1, matriz2, linhas, colunas, 255);
 
-    unsigned char *matrizQuantizada = quantizar(matriz1, linhas, colunas, 5);
 
-    printf("\nMatriz Quantizada:\n");
-    imprimir_matriz(matrizQuantizada, linhas, colunas);
 
-    unsigned char *matrizFiltrada = (unsigned char *)malloc(linhas * colunas * sizeof(unsigned char));
-    filtrar_media(matrizFiltrada, matriz1, 3, linhas, colunas);
 
-    printf("\nMatriz Filtrada:\n");
-    imprimir_matriz(matrizFiltrada, linhas, colunas);
 
-    free(matriz1);
-    free(matriz2);
-    free(scm);
-    free(matrizQuantizada);
-    free(matrizFiltrada);
+
+
+
+
+
+
+
+
+
+    end = clock();
+	time_total = (double)(end - begin) / CLOCKS_PER_SEC;
+	printf("Tempo Total: %lf\n",time_total);  
 
     return 0;
-}
-
-
+ }
