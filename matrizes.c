@@ -1,3 +1,11 @@
+/*∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗  */
+/* Aluno: Alessandro Vagner Lyra Rodrigues                  */
+/* Matrícula: 20231045050190                                */
+/* Avaliação 4: Trabalho Final                              */
+/* 04.505.23 − 2023.2 − Prof. Daniel Ferreira               */
+/* Compilador: gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0    */
+/*∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗  */
+
 #include "op_matrizes.h"
 
 void preencher_matriz(unsigned char *m, unsigned int lin, unsigned int col, int max, int min)
@@ -85,7 +93,7 @@ unsigned char *quantizar(unsigned char *m, unsigned int lin, unsigned int col, u
     return q;
 }
 
-unsigned char *filtrar_media(unsigned char *m_retorno, unsigned char *m, unsigned int tam_janela, unsigned int lin, unsigned int col)
+void filtrar_media(unsigned char *m_retorno, unsigned char *m, unsigned int tam_janela, unsigned int lin, unsigned int col)
 {
     if (!(tam_janela % 2)) {
         puts("ERRO! O Tamanho da Janela precisa ser Ímpar");
@@ -122,5 +130,4 @@ unsigned char *filtrar_media(unsigned char *m_retorno, unsigned char *m, unsigne
             *((m_retorno + j) + (i*col)) = (unsigned short int) s/(tam_janela*tam_janela); //Mudar o valor em questão para o valor da média
         }
     }
-    return m_retorno;
 }
