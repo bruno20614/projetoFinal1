@@ -1,6 +1,6 @@
 #include "csvlib.h"
 
-void gerar_csv(unsigned char *m, unsigned int tam, char *filename)
+void gerar_csv(unsigned int tam, char *filename)
 {
     FILE *fp;
     fp = fopen(filename, "w");
