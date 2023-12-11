@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //Recebe uma matriz de unsigned char, o tamanho da matriz, e o nome do arquivo
 //Gera um arquivo CSV com o cabeçalho
