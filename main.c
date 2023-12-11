@@ -7,12 +7,22 @@
 #include <dirent.h>
 #include <string.h>
 
-#define JANELA 3
-#define QUANTIZAR 8
 #define FOLDER "./oncotex_pgm"
 
 //adiconar argc e argv
-int main() {
+int main(int argc,char *argv[]) {
+
+    if (argc!=3){
+        printf("Formato: \n\t %s <Tamanho da Janela> <Nível de Quantização>\n",argv[0]);
+        exit(3);
+    }
+    char nomeCsv[20] = ("img_");
+    strcat(nomeCsv, argv[1]);
+    strcat(nomeCsv, argv[2]);
+    strcat(nomeCsv, ".csv");
+
+int janela = abs(atoi(argv[1]));
+int quant = abs(atoi(argv[2]));     
 
     int k;
 	clock_t begin, end;
@@ -24,7 +34,7 @@ int main() {
     struct dirent *dir;
     d = opendir(FOLDER);
         
-    gerar_csv( QUANTIZAR, "csv_img.csv");
+    gerar_csv( quant, nomeCsv);
     
     int vez=0;
     if(d) {
@@ -57,7 +67,7 @@ int main() {
                 exit(2);
             }
 
-            filtrar_media(med.pData, img.pData, JANELA, img.r, img.c);
+            filtrar_media(med.pData, img.pData, janela, img.r, img.c);
             writePGMImage(&med, dir->d_name);
             
             viewPGMImage(&img);
@@ -67,7 +77,7 @@ int main() {
             mqnt.tipo = img.tipo;
             mqnt.r = img.r;
             mqnt.c = img.c;
-            mqnt.mv = (img.mv/QUANTIZAR);
+            mqnt.mv = (img.mv/quant);
             mqnt.pData = NULL;
 
             mqnt.pData =(unsigned char *) malloc(mqnt.r * med.c * sizeof(unsigned char));
@@ -77,13 +87,13 @@ int main() {
                 exit(2);
             }                    
 
-            mqnt.pData = quantizar(img.pData, img.r, img.c, QUANTIZAR);
+            mqnt.pData = quantizar(img.pData, img.r, img.c, quant);
 
             struct pgm me_qnt;
             me_qnt.tipo = med.tipo;
             me_qnt.r = med.r;
             me_qnt.c = med.c;
-            me_qnt.mv = (med.mv/QUANTIZAR);
+            me_qnt.mv = (med.mv/quant);
             me_qnt.pData = NULL;
 
             me_qnt.pData =(unsigned char *) malloc(me_qnt.r * me_qnt.c * sizeof(unsigned char));
@@ -93,24 +103,24 @@ int main() {
                 exit(2);
             }
                     
-            me_qnt.pData = quantizar(med.pData,med.r,med.c,QUANTIZAR);  
+            me_qnt.pData = quantizar(med.pData,med.r,med.c,quant);  
             
             viewPGMImage(&mqnt);
             viewPGMImage(&me_qnt);            
 
             struct pgm scm;
             scm.tipo = img.tipo;
-            scm.r = QUANTIZAR;
-            scm.c = QUANTIZAR;
-            scm.mv = QUANTIZAR;
+            scm.r = quant;
+            scm.c = quant;
+            scm.mv = quant;
 
-            scm.pData = gerar_matriz_scm(mqnt.pData, me_qnt.pData, scm.r, scm.c, QUANTIZAR);
+            scm.pData = gerar_matriz_scm(mqnt.pData, me_qnt.pData, scm.r, scm.c, quant);
 
             viewPGMImage(&scm);
 
             char *rotulo = strtok(dir->d_name, "_");
 
-            preencher_csv(scm.pData, QUANTIZAR, "csv_img.csv", atoi(rotulo));
+            preencher_csv(scm.pData, quant, nomeCsv, atoi(rotulo));
 
             FILE *rev;
             rev = fopen("ordem_imagens.txt", "a+");
