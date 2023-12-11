@@ -25,3 +25,8 @@ DADOS:
 --------------------------------------------------------------------------------------
 
 Janela 3x3 - Quant 8:           Janela 5x5 - Quant 8:		Janela 7x7 - Quant 8:
+
+GRUPO:
+BRUNO COSTA 
+ALESSANDRO WAGNER 
+ARTHUR DANTAS
