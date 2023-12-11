@@ -18,7 +18,7 @@ void gerar_csv(unsigned int tam, char *filename)
     fclose(fp);
 }
 
-void preencher_csv(unsigned char *m, unsigned int tam, char *filename, unsigned char rotulo)
+void preencher_csv(unsigned char *m, unsigned int tam, char *filename, unsigned int rotulo)
 {
     FILE *fp;
     fp = fopen(filename, "a");
