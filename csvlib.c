@@ -11,7 +11,7 @@ void gerar_csv(unsigned char *m, unsigned int tam, char *filename, unsigned char
 
     //Gerar enumeração
     for (unsigned int i = 1; i <= ((tam*tam)+1); i++) {
-        fprintf(fp, "%hu, ", i);
+        fprintf(fp, "%u, ", i);
     }
     fprintf(fp, "\n");
 
