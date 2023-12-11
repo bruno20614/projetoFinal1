@@ -19,4 +19,6 @@ void gerar_csv(unsigned char *m, unsigned int tam, char *filename, unsigned char
         fprintf(fp, "%hhu, ", *(m + k));
     }
     fprintf(fp, "%s\n", rotulo ? "stroma" : "epithelium");
+
+    fclose(fp);
 }
