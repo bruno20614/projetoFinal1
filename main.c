@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <dirent.h>
 #include <string.h>
+#include <unistd.h>
 
 #define FOLDER "./oncotex_pgm"
 
@@ -46,7 +47,7 @@ int quant = abs(atoi(argv[2]));
             
             //printf("%s",dir->d_name);
 
-            char filename[256];
+            char filename[300];
             snprintf(filename, sizeof(filename), "%s/%s", FOLDER, dir->d_name); 
 
             struct pgm img;
@@ -67,11 +68,17 @@ int quant = abs(atoi(argv[2]));
                 exit(2);
             }
 
+            if (chdir("output") != 0) {
+                perror("Erro ao abrir o diretório");
+            }
+
             filtrar_media(med.pData, img.pData, janela, img.r, img.c);
             writePGMImage(&med, dir->d_name);
             
-            viewPGMImage(&img);
-            viewPGMImage(&med);
+            //viewPGMImage(&img);
+            //viewPGMImage(&med);
+
+            chdir("..");
 
             struct pgm mqnt;
             mqnt.tipo = img.tipo;
@@ -96,7 +103,7 @@ int quant = abs(atoi(argv[2]));
             me_qnt.mv = (med.mv/quant);
             me_qnt.pData = NULL;
 
-            me_qnt.pData =(unsigned char *) malloc(me_qnt.r * me_qnt.c * sizeof(unsigned char));
+            me_qnt.pData = (unsigned char *) malloc(me_qnt.r * me_qnt.c * sizeof(unsigned char));
 
             if (!(me_qnt.pData)) {
                 puts("[ERRO] Não há memória disponível.");
@@ -105,8 +112,8 @@ int quant = abs(atoi(argv[2]));
                     
             me_qnt.pData = quantizar(med.pData,med.r,med.c,quant);  
             
-            viewPGMImage(&mqnt);
-            viewPGMImage(&me_qnt);            
+            //viewPGMImage(&mqnt);
+            //viewPGMImage(&me_qnt);            
 
             struct pgm scm;
             scm.tipo = img.tipo;
@@ -116,11 +123,7 @@ int quant = abs(atoi(argv[2]));
 
             scm.pData = gerar_matriz_scm(mqnt.pData, me_qnt.pData, scm.r, scm.c, quant);
 
-            viewPGMImage(&scm);
-
-            char *rotulo = strtok(dir->d_name, "_");
-
-            preencher_csv(scm.pData, quant, nomeCsv, atoi(rotulo));
+            //viewPGMImage(&scm);
 
             FILE *rev;
             rev = fopen("ordem_imagens.txt", "a+");
@@ -131,6 +134,14 @@ int quant = abs(atoi(argv[2]));
 
             fprintf(rev, "%s\n", dir->d_name);
             fclose(rev);
+
+            char *rotulo = strtok(dir->d_name, "_");
+            //puts("01");
+            //printf("%s\n", rotulo);
+
+            preencher_csv(scm.pData, quant, nomeCsv, atoi(rotulo));
+
+            //puts("02");
         }
         closedir(d);
     } 

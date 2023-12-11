@@ -7,4 +7,4 @@ void gerar_csv( unsigned int, char *);
 
 //Recebe uma matriz de unsigned char, o tamanho da matriz, o nome do arquivo e o rótulo (0 ou 1)
 //Preenche um arquivo CSV com os dados
-void preencher_csv(unsigned char *, unsigned int, char *, unsigned char);
+void preencher_csv(unsigned char *, unsigned int, char *, unsigned int);

@@ -39,7 +39,7 @@ unsigned char *gerar_matriz_scm(unsigned char *m, unsigned char *n, unsigned int
 
     //Matriz SCM
     unsigned char *scm = NULL;
-    scm = (unsigned char*) malloc(qtd*sizeof(unsigned char));
+    scm = (unsigned char*) malloc(qtd*qtd*sizeof(unsigned char));
 
     if (!scm) {
         puts("Não há memória disponível para gerar a matriz SCM");
