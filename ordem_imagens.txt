@@ -103,3 +103,563 @@
 0
 0
 0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+1
+1
+0
+0
+0
+1
+0
+1
+1
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+1
+0
+0
+0
+1
+0
+1
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+1
+0
+1
+0
+0
+1
+1
+0
+1
+1
+1
+0
+1
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+1
+1
+0
+0
+1
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+1
+0
+0
+0
+1
+0
+1
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+1
+0
+1
+0
+0
+1
+1
+0
+1
+1
+1
+0
+1
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+1
+0
+0
+0
+1
+0
+1
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+1
+0
+1
+0
+0
+1
+1
+0
+1
+1
+1
+0
+1
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+1
+1
+0
+0
+1
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+1
+0
+0
+0
+1
+0
+1
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+1
+0
+1
+0
+0
+1
+1
+0
+1
+1
+1
+0
+1
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+1
+1
+0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+1
+1
+1
+1
+0
+0
+0
+1
+0
+1
+1
+0
+0
+0
+1
+0
+0
+1
+1
+0
+1
+0
+1
+0
+0
+1
+1
+0
+1
+1
+1
+0
+1
+0
+1
+0
+0
+0
+1
+0
+0
+1
+0
+1
+1
+0
+0
+1
+1
+0
+0
+0
+0
+1_10575_Colon TMA.pgm
+0_10790_Colon TMA.pgm
+0_11034_Colon TMA.pgm
+0_10787_Colon TMA.pgm
+0_10859_Colon TMA.pgm
+0_10566_Colon TMA.pgm
+1_10432_Colon TMA.pgm
+0_10418_Colon TMA.pgm
+0_10548_Colon TMA.pgm
+1_10923_Colon TMA.pgm
+0_10703_Colon TMA.pgm
+0_10326_Colon TMA.pgm
+0_10930_Colon TMA.pgm
+1_10909_Colon TMA.pgm
+0_10783_Colon TMA.pgm
+0_10562_Colon TMA.pgm
+0_11030_Colon TMA.pgm
+1_11023_Colon TMA.pgm
+0_10794_Colon TMA.pgm
+0_10425_Colon TMA.pgm
+1_10571_Colon TMA.pgm
+0_10498_Colon TMA.pgm
+0_10864_Colon TMA.pgm
+0_10934_Colon TMA.pgm
+0_10657_Colon TMA.pgm
+0_10322_Colon TMA.pgm
+0_10989_Colon TMA.pgm
+1_10860_Colon TMA.pgm
+0_10335_Colon TMA.pgm
+1_10927_Colon TMA.pgm
+0_10388_Colon TMA.pgm
+1_10331_Colon TMA.pgm
+1_10714_Colon TMA.pgm
+1_10644_Colon TMA.pgm
+1_10759_Colon TMA.pgm
+0_10883_Colon TMA.pgm
+0_10810_Colon TMA.pgm
+0_10592_Colon TMA.pgm
+1_10814_Colon TMA.pgm
+0_10356_Colon TMA.pgm
+1_10953_Colon TMA.pgm
+1_10803_Colon TMA.pgm
+0_10341_Colon TMA.pgm
+0_10764_Colon TMA.pgm
+0_10538_Colon TMA.pgm
+1_10581_Colon TMA.pgm
+0_10609_Colon TMA.pgm
+0_10887_Colon TMA.pgm
+1_10451_Colon TMA.pgm
+1_10378_Colon TMA.pgm
+0_10505_Colon TMA.pgm
+1_11044_Colon TMA.pgm
+0_11040_Colon TMA.pgm
+1_10894_Colon TMA.pgm
+0_10442_Colon TMA.pgm
+0_10512_Colon TMA.pgm
+1_10829_Colon TMA.pgm
+1_10979_Colon TMA.pgm
+0_10890_Colon TMA.pgm
+1_10634_Colon TMA.pgm
+1_10807_Colon TMA.pgm
+1_10957_Colon TMA.pgm
+0_10345_Colon TMA.pgm
+1_10468_Colon TMA.pgm
+0_10760_Colon TMA.pgm
+1_10940_Colon TMA.pgm
+0_10352_Colon TMA.pgm
+0_10777_Colon TMA.pgm
+0_10627_Colon TMA.pgm
+1_10773_Colon TMA.pgm
+0_10944_Colon TMA.pgm
+0_11100_Colon TMA.pgm
+1_11054_Colon TMA.pgm
+0_10515_Colon TMA.pgm
+1_10893_Colon TMA.pgm
+1_10368_Colon TMA.pgm
+0_10897_Colon TMA.pgm
+0_10619_Colon TMA.pgm
+1_10346_Colon TMA.pgm
+1_10763_Colon TMA.pgm
+0_10954_Colon TMA.pgm
+0_10637_Colon TMA.pgm
+0_10767_Colon TMA.pgm
+0_11069_Colon TMA.pgm

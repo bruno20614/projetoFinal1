@@ -10,10 +10,10 @@ void gerar_csv(unsigned int tam, char *filename)
     }
 
     //Gerar enumeração
-    for (unsigned int i = 1; i <= ((tam*tam)+1); i++) {
+    for (unsigned int i = 1; i <= ((tam*tam)); i++) {
         fprintf(fp, "%u, ", i);
     }
-    fprintf(fp, "\n");
+    fprintf(fp, " %u \n",(tam*tam+1));
 
     fclose(fp);
 }
