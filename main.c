@@ -12,6 +12,11 @@
 
 //adiconar argc e argv
 int main(int argc,char *argv[]) {
+    //int k;
+    clock_t begin, end;
+    double time_total = 0; //,time_per_img;
+    //long long int a = 999999999;
+    begin = clock();
 
     if (argc!=3){
         printf("Formato: \n\t %s <Tamanho da Janela> <Nível de Quantização>\n",argv[0]);
@@ -22,14 +27,8 @@ int main(int argc,char *argv[]) {
     strcat(nomeCsv, argv[2]);
     strcat(nomeCsv, ".csv");
 
-int janela = abs(atoi(argv[1]));
-int quant = abs(atoi(argv[2]));     
-
-    int k;
-	clock_t begin, end;
-	double time_per_img, time_total = 0;
-	long long int a = 999999999;
-	begin = clock();
+    int janela = abs(atoi(argv[1]));
+    int quant = abs(atoi(argv[2]));     
 
     DIR *d;
     struct dirent *dir;
