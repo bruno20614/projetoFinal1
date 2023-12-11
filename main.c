@@ -1,5 +1,6 @@
 #include "op_matrizes.h"
 #include "pgmlib.h"
+#include "csvlib.h" 
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,14 +23,14 @@ int main(){
     DIR *d;
     struct dirent *dir;
     d = opendir(FOLDER);
-
-    
+                    FILE *csv_img;
+                    gerar_csv( QUANTIZAR, csv_img);
      int vez=0;
     if(d) {
 
        while ((dir=readdir(d)) !=NULL) {  
             vez++;
-            //if(vez==4)  break;
+            if(vez==4)  break;
             //printf("\n-> %s \n ", dir->d_name);
             puts("0");
             if((vez==1) || (vez==2))  continue;
@@ -63,7 +64,7 @@ int main(){
 
             struct pgm mqnt;
             mqnt.tipo = img.tipo;
-            mqnt.tipo = img.r;
+            mqnt.r = img.r;
             mqnt.c = img.c;
             mqnt.mv = (img.mv/QUANTIZAR);
             mqnt.pData = NULL;
@@ -81,7 +82,7 @@ int main(){
 
             struct pgm me_qnt;
             me_qnt.tipo = med.tipo;
-            me_qnt.tipo = med.r;
+            me_qnt.r = med.r;
             me_qnt.c = med.c;
             me_qnt.mv = (med.mv/QUANTIZAR);
             me_qnt.pData = NULL;
@@ -93,16 +94,36 @@ int main(){
                     exit(2);
             }
                     puts("OK");
-
             me_qnt.pData = quantizar(med.pData,med.r,med.c,QUANTIZAR);  
             viewPGMImage(&mqnt);
             viewPGMImage(&me_qnt);
             
 
+            struct pgm scm;
+            scm.tipo =img.tipo;
+            scm.r = QUANTIZAR;
+            scm.c = QUANTIZAR;
+            scm.mv =QUANTIZAR;
+            scm.pData = gerar_matriz_scm(mqnt.pData,me_qnt.pData,scm.r,scm.c,QUANTIZAR);
+
+            viewPGMImage(&scm);
+
+                preencher_csv(scm.pData,QUANTIZAR,"csv_img",0);
+
+                    FILE *rev;
+                     rev = fopen("ordem_imagens.txt", "a+");
+                     if (!rev) {
+                     puts("Erro ao abrir o arquivo");
+                     exit(1);
+                      }
+
+                        fprintf(rev, "%s\n", dir->d_name);
+
+                                     fclose(rev);
+
         }
         closedir(d);
     } 
-
 
        
 
